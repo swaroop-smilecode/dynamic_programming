@@ -15,3 +15,50 @@ Minimum number of perfect squares that are needed to form number `12` are `3`</b
 4 + 4 + 4</br>
 You can also form `12` as below, but it's not the minimum number of perfect squares.</br>
 9 + 1 + 1 + 1</br>
+<ins>Let's visualize the decision tree:</ins></br>
+![image](https://github.com/user-attachments/assets/72169df4-c8ab-46ce-943d-821058ae72a7)
+<ins>Base case</ins></br>
+```python
+def _summing_squares(n):
+    if n == 0:
+        return 0
+```
+<ins>Recursive calls</ins></br>
+Let's use `for` loop to initiate recursive call on each branch.</br>
+```python
+def summing_squares(n):
+    if n == 0:
+        return 0
+    
+    min_squares = float("inf")
+    # `sqrt` will return decimal value. To convert into int, we use `floor`.
+    # +1 in the range function is needed because the second argument is exclusive in range function,
+    # but you want to consider that.
+    for i in range(1, floor(sqrt(n))+1):
+        curr_squares = 1 + summing_squares(n - i*i)
+        min_squares = min(min_squares, curr_squares)
+    return min_squares
+```
+
+<ins>Memoization</ins></br>
+Let's use `for` loop to initiate recursive call on each branch.</br>
+```python
+from math import sqrt, floor
+
+def summing_squares(n):
+    return _summing_squares(n, {})
+
+def _summing_squares(n, memo):
+    if n in memo:
+        return memo[n]
+    
+    if n == 0:
+        return 0
+    
+    min_squares = float("inf")
+    for i in range(1, floor(sqrt(n))+1):
+        curr_squares = 1 + _summing_squares(n - i*i, memo)
+        min_squares = min(min_squares, curr_squares)
+    memo[n] = min_squares
+    return memo[n]
+```
