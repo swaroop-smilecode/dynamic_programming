@@ -5,7 +5,9 @@ non-adjacent items in the list. There is no limit on how many items can be taken
 Whenever we see such questions of including something & excluding something, it's about taking decisions. So, your thinking should</br>
 go towards imagining decision tree & obviously recursion is the programmatic way of solving that decition tree.</br>
 
-As usually, will solve the problem for frist case & rest will be taken case by recursion automatically(Recursive leap of faith).
+As usually, will solve the problem for frist case & rest will be taken case by recursion automatically(Recursive leap of faith).</br>
+To put it another way, this is nothing but we start our decision tree with complete input `[2, 4, 5, 12, 7]`, then solve the problem</br>
+for first element of input. Keep repeating this step, until you end up with smallest input.
 ![image](https://github.com/user-attachments/assets/09132fd1-35f6-4d3b-965f-6e29b3dc414c)
 
 <ins>Base case:</ins></br>
