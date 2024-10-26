@@ -4,7 +4,8 @@ return the length of the longest subsequence of the string that is also a palind
 of a string can be created by deleting any characters of the string, while maintaining the relative order of characters.
 #### Solution
 <ins>What is sub sequence?</ins></br>
-Given a string, we can make a sub sequence just by deleting some characters on that string.
+Given a string, we can make a sub sequence just by deleting any characters of the string, while maintaining</br>
+the relative order of remaining characters.</br>
 Example</br>
 Input : abc</br>
 Output : a, b, c, ab, bc, ac, abc</br>
