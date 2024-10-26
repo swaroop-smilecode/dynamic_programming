@@ -1,7 +1,11 @@
 def knightly_number(n, m, kr, kc, pr, pc):
-    return _knightly_number(n, m, kr, kc, pr, pc)
+    return _knightly_number(n, m, kr, kc, pr, pc, {})
 
-def _knightly_number(n, m, kr, kc, pr, pc):
+def _knightly_number(n, m, kr, kc, pr, pc, memo):
+    key = (m, kr, kc)
+    if key in memo:
+        return memo[key]
+        
     if kr < 0 or kr >= n or kc < 0 or kc >= n:
         return 0
 
@@ -25,7 +29,9 @@ def _knightly_number(n, m, kr, kc, pr, pc):
     count = 0
     for neighbor in neighbors:
         neighbor_row, neighbor_col = neighbor
-        count += _knightly_number(n, m - 1, neighbor_row, neighbor_col, pr, pc)
+        count += _knightly_number(n, m - 1, neighbor_row, neighbor_col, pr, pc, memo)
+
+    memo[key] = count
     return count
 
 knightly_number(8, 2, 4, 4, 5, 5) # -> 2
