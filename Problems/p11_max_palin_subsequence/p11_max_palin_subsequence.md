@@ -5,6 +5,9 @@ of a string can be created by deleting any characters of the string, while maint
 #### Solution
 <ins>What is sub sequence?</ins></br>
 Given a string, we can make a sub sequence just by deleting some characters on that string.
+Example</br>
+Input : abc</br>
+Output : a, b, c, ab, bc, ac, abc</br>
 
 <ins>Visualizing the decision tree:</ins>
 ![image](https://github.com/user-attachments/assets/e0e54eed-2a0d-48de-9944-1c347bffdccf)
